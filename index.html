@@ -1,276 +1,34 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="kz">
 <head>
-  <meta charset="UTF-8">
-  <title>Физика 8</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
-    }
-
-    /* Сол жақ меню */
-    .menu {
-      width: 20%;
-      background: #fff;
-      padding: 10px;
-      box-sizing: border-box;
-      overflow-y: auto;
-    
-    
-    }
-
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    
-    }
-
-    .menu li {
-    border-radius:8px;
-      padding: 8px;
-      cursor: pointer;
-      background: #F5F7F8;
-      margin-bottom: 3px;
-      word-wrap: break-word;
-      white-space: normal;
-    
-    }
-
-    .submenu li {
-      background: #e6ebee;
-    }
-
-    .menu li:hover {
-      background: #1B56FD;
-    color: white;
-    }
-
-    /* Подменю */
-    .submenu {
-      display: none;
-      margin-left: 15px;
-    }
-
-    /* Таңдалған submenu элементі */
-    .submenu li.active {
-      background: #c8d3d9 !important;
-    
-    }
-
-    /* Таңдалған бөлім */
-    .menu li.section.active {
-      background: #1B56FD !important;
-      font-weight: bold;
-    color: white;
-    }
-
-    /* Контент аймағы */
-    .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
-    }
-
-    .content-text {
-      padding: 8px 10px;
-      font-weight: regular;
-    }
-
-    .content iframe {
-      flex: 1;
-      width: 100%;
-      border: none;
-    }
-
-    /* Логотип стилі */
-    .logo {
-      text-align: left;
-      margin-bottom: 15px;
-    }
-    .logo img {
-      max-width: 150px;
-      height: auto;
-    }
-
-    /* Видео контейнер */
-    #videoContainer {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: top;
-    }
-    #videoContainer video {
-      border: 3px solid #e6ebee;
-      border-radius: 8px;
-      padding: 10px;
-      max-width: 100%;
-      max-height: 100%;
-      height: auto;
-    }
-
-    /* 🔹 Мобильді версия */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-        height: 100vh;
-      }
-      .menu {
-        width: 100%;
-    height: auto;       /* Барлығы ашылады */
-    max-height: 40%;   /* Шектеуді алып тастау */
-  overflow-y: auto;
-      border-bottom: 1px solid #e6ebee;
-      }
-      .content {
-        width: 100%;
-        flex: 2;
-      overflow-y: auto;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Әріптер Патшалығы</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Сол жақ меню -->
-  <div class="menu">
-    <!-- Логотип -->
-    
-        <ul>
 
-<li class="section" onclick="toggleSubmenu(this, 'submenu1')">1-тарау. Жылу құбылыстары</li>
-      <ul id="submenu1" class="submenu">
-        <li onclick="openVideo(this, 'assets/video/CH1_diffusion.m4v')">Видео: Диффузия</li>
-    <li onclick="openInFrame(this, 'assets/phet/CH1_diffusion_kk.html')">
-      Симуляция: Диффузия
-    </li>
-      </ul>
+  <div class="book-card">
+    <img src="letters.jpg" alt="Әріптер Патшалығы" class="book-cover" />
 
-<li class="section" onclick="toggleSubmenu(this, 'submenu2')">2-тарау.  Заттың агрегаттық күйлері</li>
-      <ul id="submenu2" class="submenu">
-        <li onclick="openInFrame(this, 'assets/phet/CH2_states-of-matter-basics_kk.html')">
-      Симуляция: Заттың агрегаттық күйлері
-    </li>
-      </ul>
-<li class="section" onclick="toggleSubmenu(this, 'submenu3')">3-тарау.  Термодинамика негіздері</li>
-      <ul id="submenu3" class="submenu">
-        <li onclick="openVideo(this, 'assets/video/CH2_4 Stroke Engine Animation.mp4')">Видео: Қозғалтқыш</li>
-      </ul>
+    <div class="book-info">
+      <h2>Әріптер Патшалығы</h2>
+      <p class="categories">
+        Категория: 
+        <a href="#">4–7 жас</a> / <a href="#">8–12 жас</a>
+      </p>
+      <p class="description">
+        Күн Әріптер Патшалығының үстінен алтын сиясын төге көтерілді.
+		Ашық кітап пішінді төбелер жарқырап, ауада лентадай ирелеңдеген сөйлемдер тербеліп тұрды. 
+		  Ал жұмсақ дауысты дыбыстарға толы самал жел көше бойымен сырғып өтті
+      </p>
 
-  <li class="section" onclick="toggleSubmenu(this, 'submenu4')">4-тарау. Электрстатика негіздері
-</li>
-      <ul id="submenu4" class="submenu">
-         <li onclick="openInFrame(this, 'assets/phet/CH4_john-travoltage_kk.html')">
-      Симуляция: John Travoltage
-    </li>
-     <li onclick="openInFrame(this, 'assets/phet/CH4_balloons-and-static-electricity_kk.html')">
-      Симуляция: Ститикалық заряд
-    </li>
-        <li onclick="openInFrame(this, 'assets/phet/CH4_charges-and-fields_kk.html')">
-      Симуляция: Электр өрісі
-    </li>
-     <li onclick="openInFrame(this, 'assets/phet/CH4_capacitor-lab-basics_kk.html')">
-      Симуляция: Конденсатор
-    </li>
-      </ul>
-     <li class="section" onclick="toggleSubmenu(this, 'submenu5')">5-тарау. Тұрақты электр тогы
-</li>
-      <ul id="submenu5" class="submenu">
-     <li onclick="openVideo(this, 'assets/video/CH5_series_kz.mp4')">Видео: Өткiзгiштердi тiзбектей жалғау</li>     
-       <li onclick="openVideo(this, 'assets/video/CH5_parallel_kz.mp4')">Видео: Өткiзгiштердi параллель жалғау</li>
-              <li onclick="openVideo(this, 'assets/video/5.7_1kz.mp4')">Видео: Қысқа тұйықталу</li>
-      <li onclick="openVideo(this, 'assets/video/5.7_1kz.mp4')">Видео: Сақтандырғыш</li>
-    <li onclick="openInFrame(this, 'assets/phet/CH5_circuit-construction-kit-dc_kk.html')">
-      Виртуалды зертхана
-    </li>
-      </ul>
-      <li class="section" onclick="toggleSubmenu(this, 'submenu6')">6-тарау. Электрмагниттік құбылыстар
-</li>
-      <ul id="submenu6" class="submenu">
-    <li onclick="openInFrame(this, 'assets/phet/CH6_magnet-and-compass_en.html')">
-      Симуляция: Магнит және компас
-    </li>
-    <li onclick="openInFrame(this, 'assets/phet/CH6_magnets-and-electromagnets_en.html')">
-      Симуляция: Магнит және электрмагнит
-    </li>
-        <li onclick="openInFrame(this, 'http://srptm.kz/embedded/physics-8-en/assets/phet/CH6_generator_en.html')">
-      Симуляция: Генератор
-    </li>
-      </ul>
-      <li class="section" onclick="toggleSubmenu(this, 'submenu7')">7-тарау. Жарық құбылыстары
-</li>
-      <ul id="submenu7" class="submenu">
-       <li onclick="openVideo(this, 'assets/video/CH7_hyperopia_kz.mp4')">Видео: Алыстан көргіштік</li>
-       <li onclick="openVideo(this, 'assets/video/CH7_myopia_kz.mp4')">Видео: Жақыннан көргіштік</li>
-    <li onclick="openInFrame(this, 'assets/phet/CH7_bending-light_kk.html')">
-      Симуляция: Жарық сынуы
-    </li>
-    <li onclick="openInFrame(this, 'assets/phet/CH7_geometric-optics_en.html')">
-      Симуляция: Айна мен линза
-    </li>
-      </ul>
-    </ul>
+      <a href="Әріптер Патшалығы.pdf" download class="download-btn">
+        <img src="book-icon.svg" alt="Book Icon" class="icon" />
+        Тегін оқу
+      </a>
+    </div>
   </div>
 
-  <!-- Контент аймағы -->
-  <div class="content" id="contentArea">
-    <iframe id="contentFrame"></iframe>
-  </div>
-
-  <script>
-    function toggleSubmenu(el, id) {
-      document.querySelectorAll(".menu li.section").forEach(li => li.classList.remove("active"));
-      document.querySelectorAll(".submenu").forEach(ul => ul.style.display = "none");
-
-      el.classList.add("active");
-      document.getElementById(id).style.display = "block";
-    }
-
-    function setActive(el) {
-      document.querySelectorAll(".submenu li").forEach(li => li.classList.remove("active"));
-      el.classList.add("active");
-      pauseVideoIfPlaying();
-    }
-
-    // iframe ішінде ашу (Тапсырма үшін)
-    function openInFrame(el, url) {
-      setActive(el);
-      document.getElementById("contentArea").innerHTML = `
-        <iframe id="contentFrame" src="${url}"></iframe>
-      `;
-    }
-
-    // Видео ашу
-    function openVideo(el, videoFile) {
-      setActive(el);
-      document.getElementById("contentArea").innerHTML = `
-        <div id="videoContainer">
-          <video id="lessonVideo" controls>
-            <source src="${videoFile}" type="video/mp4">
-            Сіздің браузер видео ойнатуды қолдамайды.
-          </video>
-        </div>`;
-    }
-
-    // Симуляция ашу + үстінде текст шығару
-    function openSimulation(el, url, description) {
-      setActive(el);
-      document.getElementById("contentArea").innerHTML = `
-        <div class="content-text">${description}</div>
-        <iframe id="contentFrame" src="${url}"></iframe>
-      `;
-    }
-
-    function pauseVideoIfPlaying() {
-      const video = document.getElementById("lessonVideo");
-      if (video && !video.paused) {
-        video.pause();
-      }
-    }
-  </script>
 </body>
 </html>
